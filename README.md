@@ -4,17 +4,17 @@
 
 * 使用資料集 : **[Home Credit Default Risk | Kaggle](https://www.kaggle.com/c/home-credit-default-risk)**<br>
 ![This is an image](https://www.homecredit.net/~/media/Images/H/Home-Credit-Group/logo/hcg-logo.png?h=71&iar=0&w=121)
-<br>
 
 ## 特色
 1.  透過客戶提供的**個人資訊**及**財產資訊**等，快速估計新客戶的信用評分。
 2.  透過與資料庫的歷史客戶比較，推算新客戶適合的信用額度。
+<br>
 
 ## 功能
 1.  <span style="color: #AD5A5A">**資訊輸入介面**</span> : 供客戶或金融機構員工輸入客戶資訊的網頁表單。
 2.  <span style="color: #AD5A5A">**評估資訊報告**</span> : 展示依客戶輸入資訊所計算出的信用評分與可負擔的信用額度，並提供資料庫內類似背景客戶之統計圖表，供金融機構員工登入帳號後調閱。
 3. <span style="color: #AD5A5A">**模型結果報告**</span> : 紀錄所訓練出的模型的分析結果，供金融機構員工身份登入帳號後調閱。
-
+<br>
 
 ## 網頁開發架構
 
