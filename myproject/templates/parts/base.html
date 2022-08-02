@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>{% block title %}Document{% endblock title %}</title>
+    {% block styles %}
+    {% include "parts/_styles.html" %}
+    {% endblock styles %}
+    {% block scripthead %}
+    {{ moment.include_moment() }}
+    {{ moment.locale('zh-tw') }}
+    {% endblock scripthead %}
+
+    {% endblock head %}
+</head>
+
+<body>
+    {% block body %}
+
+    <!-- FOOTER -->
+    {% include "parts/_foot.html" %}
+
+    <!-- script -->
+    {% include "parts/_scripts.html" %}
+
+    {% endblock body %}
+</body>
+
+</html>

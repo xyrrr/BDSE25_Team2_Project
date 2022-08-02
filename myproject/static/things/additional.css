@@ -1,0 +1,40 @@
+/* #headimg {
+    margin-left: 50px;
+    margin-right: 20px;
+} */
+
+/* .nav-style {
+    background-color: aqua;
+    border-radius: 10px;
+} */
+
+/* .container_main {
+    background-color: bisque;
+} */
+
+/* .adding-form-pattrn {
+    border: none;
+    background-color: bisque;
+} */
+
+.form-check-label-new1 {
+    font-size: small;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.container {
+    max-width: 960px;
+}

@@ -1,0 +1,137 @@
+ fieldset { 
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 2px groove 	#C4E1FF;
+    border-radius: 10px;
+}
+
+legend{
+    width: 150px;
+    text-align: left;
+    padding:0 20px 0 20px ;
+}
+.legend2 {
+    width: 280px;
+    text-align: left;
+    padding: 0 20px 0 20px;
+}
+
+.post{
+    background-color: rgba(102, 123, 226, 0.297);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 30px 0px;
+    /* margin: 30px; */
+    font-weight: bold;
+    color: black;
+
+}
+
+body{
+    background-color: 	#F0F0F0;
+}
+
+.btn4{
+    background-color:#81C0C0;
+    color: black;
+    border: 1px solid #F0F0F0;
+    width: 150px;
+    font-weight: 600;
+    font-family: 'monospace';
+    border-radius: 30px;
+    margin-right: 30px;
+}
+
+.btn4:hover{
+    background-color: black;
+    border:solid 1px #3C3C3C;
+}
+h2{
+    font-size: 50px;
+    font-weight: 800;
+}
+select{
+    width: 150px; 
+    text-align: center;
+    height: 40px;
+    border-radius: 5px ;
+ }
+ input::-webkit-input-placeholder {
+    position: relative;
+    text-align: right;
+}
+.Icon-outside {
+    position: relative;
+}
+
+.Icon-outside i {
+    position: absolute;
+    /* margin-left:-6px; */
+    top: 32px;
+    padding: 11px 12px;
+    color: #FFFFFF;
+    background: #4F4F4F;
+    border-radius: 3px 0 0 3px;
+}
+
+.Icon-inside {
+    position: relative;
+}
+
+.Icon-inside i {
+    position: absolute;
+    left: 15px;
+    top: 32px;
+    padding: 10px 10px;
+    color: #5B5B5B;
+}
+.divm {
+
+    margin-bottom: 10px;
+
+}
+.mar{
+    margin-left: 20px;
+    margin-bottom: 0px;
+ }
+
+ .gender{
+    padding: 10px;
+    width: 300px;
+    height: 40px;
+    border: solid 1px #C4E1FF;
+    background-color: #E6E6F2		;
+ }
+ .date1{
+    width: 200px; 
+    height: 40px;
+    padding-right: 10px ;
+    border-radius:5px ;
+    border-style: unset;
+    text-align: center;
+
+ }
+ .dollar {
+    padding-left: 30px;
+}
+.car{
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    border: solid 1px #C4E1FF;
+    background-color: #E6E6F2		;
+ }
+ .loantype{
+    padding: 10px;
+    width: 300px;
+    height: 40px;
+    border: solid 1px #C4E1FF;
+    background-color: #E6E6F2		;
+ }

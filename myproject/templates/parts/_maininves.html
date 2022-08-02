@@ -1,0 +1,410 @@
+<div class="container marketing">
+
+
+    <!-- <hr class="featurette-divider"> -->
+    <div class="container container_main">
+      <div class="py-5 text-center">
+        <h2>徵信表單</h2>
+      </div>
+
+      <form class="needs-validation post " novalidate action="#" method="post" autocomplete="off">
+        <fieldset class="row g-3">
+          <legend>客戶資訊</legend>
+          <div class="col-md-4 divm">
+            <label for="lastName" class="form-label">客戶編號</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              客戶編號是必填欄位
+            </div>
+          </div>
+          <div class="col-md-4 divm">
+            <label for="firstName" class="form-label">姓名</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              名字是必填欄位
+            </div>
+          </div>
+          <div class="col-md-4 divm">
+            <label for="apply-day" class="form-label">申請日期</label><br>
+            <input type="date" class="form-select date1" id="apply-day" required>
+          </div>
+
+          <div class="col-md-4  divm">
+            <label for="registchan-day" class="form-label">最近一次註冊更改日期</label><br>
+            <input type="date" class="form-select date1" id="registchan-day" required>
+          </div>
+          <div class="col-md-4  divm">
+            <label for="infochan-day" class="form-label">最近一次身份更改日期</label><br>
+            <input type="date" class="form-select date1" id="infocang-day" required>
+          </div>
+          <div class="col-md-4  divm">
+            <label for="phonechan-day" class="form-label">最近一次電話更改日期</label><br>
+            <input type="date" class="form-select date1" id="phone-day" required>
+          </div>
+          <div class="col-md-4  divm">
+            <label for="OBSSOCIAL60" class="form-label">社交狀態</label><br>
+            <input type="number" class="form-select date1" id="OBSSOCIAL60" min="0" required>
+          </div>
+          <div class="col-md-4 divm" >
+            <label for="suitetype" class="form-label">申請貸款時陪同者</label><br>
+            <select id="suitetype" class="form-select selec1">
+              <option value="" disabled selected>(請選擇)</option>
+              <option >無人陪同</option>
+              <option>夥伴</option>
+              <option>伴侶</option>
+              <option>小孩</option>
+              <option>父母</option>
+              <option>其他家人</option>
+            </select>
+          </div>
+          <div class="col-md-4 divm" >
+            <label for="housetype" class="form-label">居住房屋型態</label><br>
+            <select id="housetype" class="form-select selec1">
+              <option value="" disabled selected>(選擇房屋型態)</option>
+              <option >公寓(Municipal)</option>
+              <option>出租公寓</option>
+              <option>套房(office)</option>
+              <option>與父母同住</option>
+              <option>獨棟</option>
+            </select>
+          </div>
+          <div class="col-md-4 divm Icon-inside">
+            <label for="accountamt" class="form-label">帳戶餘額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="accountamt"
+               placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-4 divm Icon-outside mar">
+            <label for="cardavg" class="form-label">所有信用卡平均額度</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control card" aria-label="Amount (to the nearest dollar)" id="cardavg"
+               placeholder=".00">
+            <!-- <i class="fa-regular fa-credit-card" ></i> -->
+            <i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i>
+          </div>
+          <div class="col-12 divm" >
+            <label for="suitetype" class="form-label "><i class="fa-regular fa-file-lines"></i> 文件繳交</label><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件5</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件6</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件7</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件8</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件9</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件10</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件11</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件12</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件13</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件14</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件15</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件16</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件17</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件18</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件19</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件20</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">文件21</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="row g-3">
+          <legend class="legend2">本行過去申請紀錄</legend>
+          <div class="col-md-3" divm>
+            <label for="yieldhigh" class="form-label">之前申請貸款的利率</label><br>
+            <select id="yieldhigh" class="form-select selec1" >
+              <option value="" disabled selected>(請選擇)</option>
+              <option >低</option>
+              <option>中</option>
+              <option>高</option>
+            </select>
+          </div>
+          <div class="col-md-3" divm>
+            <label for="loancontract" class="form-label">貸款合約種類</label><br>
+            <select id="loancontract" class="form-select selec1" >
+              <option value="" disabled selected>(請選貸款類型)</option>
+              <option >消費貸款(POS)</option>
+              <option>現金貸款</option>
+              <option>循環貸款</option>
+            </select>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="latpay" class="form-label">過去平均欠繳天數</label><br>
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="latpay"
+               placeholder="天">
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="daydecision" class="form-label">先前申請與本次申請間隔時間</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="daydecision"
+               placeholder="天">
+            <!-- <span class="input-group-text">.00</span> -->
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="daysperdiomedian" class="form-label">貸款合約相對時間長</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)"
+              id="daysperdiomedian"  placeholder="天">
+            <!-- <span class="input-group-text">.00</span> -->
+          </div>
+          <div class="col-md-3  divm">
+            <label for="cntpaymentnedian" class="form-label">過去貸款期數中位數</label><br>
+            <input type="number" class="form-select date1" id="cntpaymentnedian" min="0" required>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevarrearamt" class="form-label">過去平均欠款額度</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)"
+              id="prevarrearamt"  placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevannuity" class="form-label">過去最高申貸金額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="prevannuity"
+               placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevloanmax" class="form-label">過去最高額貸金額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="prevloanmax"
+               placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevloansum" class="form-label">過去貸款總額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="prevloansum"
+               placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevloansum" class="form-label">過去貸款總額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="prevloansum"
+               placeholder="0.0">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevdownmedian" class="form-label">過去貸款頭期款中位數</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)"
+              id="prevdownmedian"  placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevgoodsmax" class="form-label">過去商品貸款最高金額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="prevgoodsmax"
+             placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevcremax" class="form-label">過去銀行最高願意核貸比例</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="prevcremax">
+            <!-- <span class="input-group-text">.00</span> -->
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevdownpromedian" class="form-label">過去頭期款比例中位數</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)"
+              id="prevdownpromedian">
+            <!-- <span class="input-group-text">.00</span> -->
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevprimarymedian" class="form-label">過去貸款利率中位數</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)"
+              id="prevprimarymedian">
+            <!-- <span class="input-group-text">.00</span> -->
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="prevprimarymax" class="form-label">過去貸款利率最大值</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)"
+              id="prevprimarymax">
+            <!-- <span class="input-group-text">.00</span> -->
+          </div>
+
+        </fieldset>
+
+        <fieldset class="row g-3">
+          <legend class="legend2">徵信局其他銀行紀錄</legend>
+          <div class="col-md-3  divm">
+            <label for="reqqur" class="form-label">3個月內向信用局詢問的次數</label><br>
+            <input type="number" class="form-select date1" id="reqqur" placeholder="次" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otherloantotal" class="form-label">他行總共貸款筆數</label><br>
+            <input type="number" class="form-select date1" id="otherloantotal" placeholder="筆" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="creditactive" class="form-label">還在活動中的貸款筆數</label><br>
+            <input type="number" class="form-select date1" id="creditactive" placeholder="筆" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="creditclose" class="form-label">償還完畢的貸款筆數</label><br>
+            <input type="number" class="form-select date1" id="creditclose" placeholder="筆" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="creditsold" class="form-label">出售的貸款筆數</label><br>
+            <input type="number" class="form-select date1" id="creditsold" placeholder="筆" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otheroverdue" class="form-label">他行貸款平均違約天數</label><br>
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="otheroverdue"
+              placeholder="天">
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otheroverdue" class="form-label">他行貸款平均剩餘到期天數</label><br>
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="otherloanenddate"
+              placeholder="天">
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otherloanupdate" class="form-label">貸款最近一次更新平均天數</label><br>
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="otherloanupdate"
+               placeholder="天">
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otherprolongcnt" class="form-label">他行貸款延期平均次數</label><br>
+            <input type="number" class="form-select date1" id="otherprolongcnt" placeholder="次" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otherloanclear" class="form-label">他行貸款清償平均次數</label><br>
+            <input type="number" class="form-select date1" id="otherloanclear" placeholder="次" min="0" required>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="otherloansum" class="form-label">他行貸款平均金額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="otherloansum"
+               placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="otherloandebtsum" class="form-label">他行貸款尚需償還平均金額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="otherloandebtsum"
+               placeholder=".00">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3 divm Icon-inside">
+            <label for="otheroverduemean" class="form-label">他行貸款遲繳平均金額</label>
+            <!-- <span class="input-group-text">$</span> -->
+            <input type="text" class="form-control dollar" aria-label="Amount (to the nearest dollar)" id="otheroverduemean"
+               placeholder="0.0">
+            <!-- <span class="input-group-text">.00</span> -->
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otherloantype" class="form-label">有幾項是其他類型貸款</label><br>
+            <input type="number" class="form-select date1" id="otherloantype" placeholder="項" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otherloancustomer" class="form-label">有幾項是消費貸款</lael><br>
+            <input type="number" class="form-select date1" id="otherloancustomer" placeholder="項" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="otherloancredit" class="form-label">有幾項是信用卡貸款</lael><br>
+            <input type="number" class="form-select date1" id="otherloancredit" placeholder="項" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="othermicroloan" class="form-label">有幾項是小額貸款</lael><br>
+            <input type="number" class="form-select date1" id="othermicroloan" placeholder="項" min="0" required>
+          </div>
+          <div class="col-md-3  divm">
+            <label for="othermortgageloan" class="form-label">有幾項是抵押貸款</lael><br>
+            <input type="number" class="form-select date1" id="othermortgageloan" placeholder="項" min="0" required>
+          </div>
+
+        </fieldset>
+        <!-- <hr class="my-4"> -->
+
+        <div class="d-grid gap-2 d-md-block" style="text-align:right ;">
+          <button class="btn btn-secondary btn-lg btn3" type="reset" id="reset-all"><i class="fa-solid fa-recycle"></i> 重填</button>
+          <button class="btn btn-primary btn-lg btn3" type="submit" id="sent"><i class="fa-solid fa-paper-plane"></i> 送出</button>
+        </div>
+      </form>
+
+    </div>
+
+
+    <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
