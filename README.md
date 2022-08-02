@@ -20,6 +20,7 @@
 ```
 |__ app.py: create all route
 |__ config.py: set all config
+|__ requirements.txt: all python package requirements
 |__ myproject
     |__ __init.py: 初始化Python的 "myproject" packages
     |__ models.py: 連接使用者資料庫
