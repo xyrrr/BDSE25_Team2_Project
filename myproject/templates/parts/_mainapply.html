@@ -4,12 +4,18 @@
         <div class="py-5 text-center">
             <h2>貸款申請表單</h2>
         </div>
-        <form class="needs-validation post " novalidate action="#" method="post" autocomplete="off">
+        <div>
+            <div class="row justify-content-end">
+                <button class="btn btn-secondary btn-sm btn4" type="demo" id="demo">
+                    <i class="fa-solid fa-file-pen"></i>&nbsp;Demo</button>
+            </div>
+        </div>
+        <form class="needs-validation post" novalidate action="#" method="post" autocomplete="off">
             <!-- <hr class="my-4"> -->
             <fieldset class="row g-3">
                 <legend>基本資訊</legend>
                 <div class="col-md-4 divm">
-                    <label for="lastName" class="form-label">客戶ID:</label>
+                    <label for="lastName" class="form-label">姓氏</label>
                     <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         姓氏是必填欄位
@@ -44,10 +50,20 @@
                 <div class="col-md-4 divm">
                     <label for="birth-day" class="form-label">生日</label><br>
                     <input type="date" class="form-select date1" id="birth-day" required>
+                    <div class="invalid-feedback">
+                        請選擇您的生日
+                    </div>
                 </div>
                 <div class="col-md-4 divm">
-                    <label for="education" class="form-label">學歷</label>
-                    <input type="text" class="form-control" id="education" placeholder="">
+                    <label for="education" class="form-label">學歷</label><br>
+                    <select class="form-select" id="education">
+                        <option value="" disabled selected>(選擇)</option>
+                        <option>國中</option>
+                        <option>高中</option>
+                        <option>大學</option>
+                        <option>大學肆業</option>
+                        <option>研究所</option>
+                    </select>
                 </div>
                 <div class="col-md-4 divm">
                     <label for="family-type" class="form-label">婚姻狀況</label><br>
@@ -136,19 +152,21 @@
                     </div>
                 </div>
                 <!-- 聯絡地址 -->
-                <div class="col-12 divm divm mar">
+                <!-- <div class="col-12 divm divm mar">
                     <input class="form-check-input" type="checkbox" value="" id="same-address-1">
                     <label class="form-label form-check-label-new1" for="same-address-1">同永久地址</label>
-                </div>
+                </div> -->
                 <div class="col-md-2 divm">
                     <label for="address-contact-region" class="form-label">聯絡地址</label>
-                    <select class="form-select" id="address-main-region">
+                    <select class="form-select" id="address-contact-region">
                         <option value="" disabled selected>(選擇地區)</option>
                         <option>台灣</option>
                     </select>
                 </div>
                 <div class="col-md-2 divm">
                     <label for="address-main-addr" class="form-label">&nbsp;</label>
+                    <input class="form-check-input" type="checkbox" value="" id="same-address-1">
+                    <label class="form-label form-check-label-new1" for="same-address-1">同永久地址</label>
                     <select class="form-select" id="address-contact-city">
                         <option value="" disabled selected>(選擇城市)</option>
                         <option>台北市</option>
@@ -201,13 +219,15 @@
                 <!-- 工作地址 -->
                 <div class="col-md-2 divm">
                     <label for="address-work-region" class="form-label">工作地址</label>
-                    <select class="form-select" id="address-main-region">
+                    <select class="form-select" id="address-work-region">
                         <option value="">(選擇地區)</option>
                         <option>台灣</option>
                     </select>
                 </div>
                 <div class="col-md-2 divm">
                     <label for="address-main-addr" class="form-label">&nbsp;</label>
+                    <input class="form-check-input" type="checkbox" value="" id="same-address-2">
+                    <label class="form-label form-check-label-new1" for="same-address-2">同永久地址</label>
                     <select class="form-select" id="address-work-city">
                         <option value="">(選擇城市)</option>
                         <option>台北市</option>
@@ -248,6 +268,13 @@
                     <select class="form-select" id="income-type" required>
                         <option value="" disabled selected>(選擇類型)</option>
                         <option>工作</option>
+                        <option>投資</option>
+                        <option>退休金</option>
+                        <option>公職俸給</option>
+                        <option>失業補助</option>
+                        <option>助學金</option>
+                        <option>商務</option>
+                        <option>生產補助</option>
                     </select>
                     <div class="invalid-feedback">
                         請選擇收入類型
@@ -257,18 +284,24 @@
                     <label for="profession-type" class="form-label">從事行業別</label><br>
                     <select class="form-select" id="profession-type" required>
                         <option value="">(選擇類型)</option>
-                        <option>清潔工</option>
-                        <option>餐飲</option>
-                        <option>管理者</option>
+                        <option>一般勞工</option>
+                        <option>銷售人員</option>
+                        <option>公司經營者</option>
+                        <option>管理人員</option>
                         <option>司機</option>
-                        <option>技術管理人員</option>
-                        <option>勞工</option>
-                        <option>一般技術人員</option>
-                        <option>核心人員</option>
-                        <option>醫療業者</option>
-                        <option>服務員</option>
-                        <option>銷售員</option>
-                        <option>保全</option>
+                        <option>技術人員</option>
+                        <option>會計師</option>
+                        <option>醫事人員</option>
+                        <option>保全、警衛人員</option>
+                        <option>廚房人員</option>
+                        <option>清潔人員</option>
+                        <option>私人服務人員</option>
+                        <option>非技術勞工</option>
+                        <option>服務生、酒保</option>
+                        <option>秘書</option>
+                        <option>房地產經紀人</option>
+                        <option>人力資源人員</option>
+                        <option>IT人員</option>
                     </select>
                     <div class="invalid-feedback">
                         請選擇職業
@@ -305,14 +338,14 @@
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="tenure-care" id="tenure-care-no"
-                                value="tenure-care-yes">
+                                value="tenure-care-no" checked>
                             <label class="form-check-label" for="tenure-care-no">否</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 divm">
                     <label for="tenure-care-date" class="form-label">車輛年限</label><br>
-                    <input type="date" class="form-select date1" id="tenure-care-date">
+                    <input type="date" class="form-select date1" id="tenure-care-date" disabled>
                 </div>
                 <div class="col-md-4 divm ">
                     <label for="" class="form-label">是否擁有房產</label><br>
@@ -324,7 +357,7 @@
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="tenure-house" id="tenure-house-no"
-                                value="tenure-house-no">
+                                value="tenure-house-no" checked>
                             <label class="form-check-label" for="tenure-house-no">否</label>
                         </div>
                     </div>
@@ -339,7 +372,7 @@
                     <div class="loantype">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="apply-type" id="apply-type1"
-                                value="apply-type1">
+                                value="apply-type1" checked>
                             <label class="form-check-label" for="apply-type1">現金貸款</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -353,14 +386,14 @@
                     <label for="apply-amount" class="form-label">貸款金額</label>
                     <!-- <span class="input-group-text">$</span> -->
                     <input type="text" class="form-control dollar mar2" aria-label="Amount (to the nearest dollar)"
-                        id="apply-amount" placeholder=".00">
+                        id="apply-amount" placeholder=".00" required>
                     <!-- <span class="input-group-text">.00</span> -->
                     <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
                 </div>
             </fieldset>
 
             <div class="col-md-4  divm">
-                <input type="radio" id="pravic" name="fav_language" value="agree" required>
+                <input type="checkbox" id="pravic" name="fav_language" value="agree" required>
                 <label for="pravic">我同意 <span><a
                             href="https://lyrasoft.net/en/blog/knowledge/24-chinese-privacy-policy-template.html"
                             target="_blank"> 個人隱私條款</a></span></label><br>

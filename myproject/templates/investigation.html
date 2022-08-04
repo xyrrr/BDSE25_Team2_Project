@@ -10,6 +10,8 @@
 {% include "parts/_maininves.html" %}
 {{ super() }}
 <script src="{{ url_for('static', filename='bootstrap-5.0.2/dist/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ url_for('static', filename='things/form-validation.js') }}"></script>
-<script src="{{ url_for('static', filename='things/confirm1.js') }}"></script>
+<script src="{{ url_for('static', filename='myjs/form-validation.js') }}"></script>
+<script src="{{ url_for('static', filename='myjs/confirm1.js') }}"></script>
+<script src="{{ url_for('static', filename='myjs/invesdemo.js') }}"></script>
+
 {% endblock body %}
