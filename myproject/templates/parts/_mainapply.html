@@ -10,20 +10,20 @@
                     <i class="fa-solid fa-file-pen"></i>&nbsp;Demo</button>
             </div>
         </div>
-        <form class="needs-validation post" novalidate action="#" method="post" autocomplete="off">
+        <form class="needs-validation post" novalidate action="/result" method="post" autocomplete="off">
             <!-- <hr class="my-4"> -->
             <fieldset class="row g-3">
                 <legend>基本資訊</legend>
                 <div class="col-md-4 divm">
                     <label for="lastName" class="form-label">姓氏</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         姓氏是必填欄位
                     </div>
                 </div>
                 <div class="col-md-4 divm">
                     <label for="firstName" class="form-label">名字</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         名字是必填欄位
                     </div>
@@ -49,14 +49,14 @@
                 </div>
                 <div class="col-md-4 divm">
                     <label for="birth-day" class="form-label">生日</label><br>
-                    <input type="date" class="form-select date1" id="birth-day" required>
+                    <input type="date" class="form-select date1" name="birth-day" id="birth-day" required>
                     <div class="invalid-feedback">
                         請選擇您的生日
                     </div>
                 </div>
                 <div class="col-md-4 divm">
                     <label for="education" class="form-label">學歷</label><br>
-                    <select class="form-select" id="education">
+                    <select class="form-select" name="education" id="education">
                         <option value="" disabled selected>(選擇)</option>
                         <option>國中</option>
                         <option>高中</option>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-md-4 divm">
                     <label for="family-type" class="form-label">婚姻狀況</label><br>
-                    <select class="form-select" id="family-type" required>
+                    <select class="form-select" name="family-type" id="family-type" required>
                         <option value="" disabled selected>(選擇)</option>
                         <option>已婚</option>
                         <option>未婚</option>
@@ -82,41 +82,42 @@
                 </div>
                 <div class="col-md-4 divm">
                     <label for="family-member" class="form-label">家庭成員數</label>
-                    <input type="text" class="form-control" id="family-member" placeholder="0">
+                    <input type="text" class="form-control" name="family-member" id="family-member" placeholder="0">
                 </div>
                 <div class="col-md-4 divm">
                     <label for="family-child" class="form-label">子女數</label>
-                    <input type="text" class="form-control" id="family-child" placeholder="0">
+                    <input type="text" class="form-control" name="family-child" id="family-child" placeholder="0">
                 </div>
                 <!-- 聯絡方式 -->
 
                 <div class="col-md-6 divm">
                     <label for="phone-home" class="form-label">住家電話</label>
-                    <input type="text" class="form-control" id="phone-home" placeholder="" value="">
+                    <input type="text" class="form-control" name="phone-home" id="phone-home" placeholder="" value="">
                 </div>
 
                 <div class="col-md-6 divm ">
                     <label for="phone-mobile" class="form-label">手機</label>
-                    <input type="text" class="form-control" id="phone-mobile" placeholder="" value="" maxlength="10">
+                    <input type="text" class="form-control" name="phone-mobile" id="phone-mobile" placeholder="" value="" maxlength="10">
                 </div>
                 <div class="col-12 divm">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
                 </div>
                 <!-- 永久地址 -->
                 <div class="col-md-2 divm">
                     <label for="address-main-region" class="form-label">永久地址</label>
-                    <select class="form-select" id="address-main-region" required>
+                    <select class="form-select" name="address-main-region" id="address-main-region" required>
                         <option value="" disabled selected>(選擇地區)</option>
                         <option>台灣</option>
+                        <option>東南亞</option>
                     </select>
                     <div class="invalid-feedback">
                         請選擇你居住的地區
                     </div>
                 </div>
-                <div class="col-md-2 divm">
+                <div class="col-md-2 divm" id="address-main-contral-1">
                     <label for="address-main-city" class="form-label">&nbsp;</label>
-                    <select class="form-select" id="address-main-city" required>
+                    <select class="form-select" name="address-main-city" id="address-main-city1" required>
                         <option value="" disabled selected>(選擇城市)</option>
                         <option>台北市</option>
                         <option>基隆市</option>
@@ -144,30 +145,49 @@
                         請選擇你居住的城市
                     </div>
                 </div>
+                <div class="col-md-2 divm" id="address-main-contral-2" style="display:none">
+                    <label for="address-main-city" class="form-label">&nbsp;</label>
+                    <select class="form-select" name="address-main-city" id="address-main-city2">
+                        <option value="" disabled selected>(選擇城市)</option>
+                        <option>河內</option>
+                        <option>胡志明</option>
+                        <option>金邊</option>
+                        <option>曼谷</option>
+                        <option>清邁</option>
+                        <option>馬尼拉</option>
+                        <option>宿霧</option>
+                        <option>吉隆坡</option>
+                        <option>古晉</option>
+                        <option>新加坡</option>
+                        <option>汶萊</option>
+                        <option>雅加達</option>
+                        <option>錫江</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        請選擇你居住的城市
+                    </div>
+                </div>
                 <div class="col-md-8 divm">
                     <label for="address-main-addr" class="form-label">&nbsp;</label>
-                    <input type="text" class="form-control" id="address-main-addr" placeholder="住址" required>
+                    <input type="text" class="form-control" name="address-main-addr" id="address-main-addr" placeholder="住址" required>
                     <div class="invalid-feedback">
                         請輸入地址
                     </div>
                 </div>
                 <!-- 聯絡地址 -->
-                <!-- <div class="col-12 divm divm mar">
-                    <input class="form-check-input" type="checkbox" value="" id="same-address-1">
-                    <label class="form-label form-check-label-new1" for="same-address-1">同永久地址</label>
-                </div> -->
                 <div class="col-md-2 divm">
                     <label for="address-contact-region" class="form-label">聯絡地址</label>
-                    <select class="form-select" id="address-contact-region">
+                    <select class="form-select" name="address-contact-region" id="address-contact-region">
                         <option value="" disabled selected>(選擇地區)</option>
                         <option>台灣</option>
+                        <option>東南亞</option>
                     </select>
                 </div>
-                <div class="col-md-2 divm">
-                    <label for="address-main-addr" class="form-label">&nbsp;</label>
-                    <input class="form-check-input" type="checkbox" value="" id="same-address-1">
+                <div class="col-md-2 divm" id="address-contact-contral-1">
+                    <label for="address-contact-addr" class="form-label">&nbsp;</label>
+                    <input class="form-check-input" type="checkbox" value="" name="same-address-1" id="same-address-1">
                     <label class="form-label form-check-label-new1" for="same-address-1">同永久地址</label>
-                    <select class="form-select" id="address-contact-city">
+                    <select class="form-select" name="address-contact-city" id="address-contact-city1">
                         <option value="" disabled selected>(選擇城市)</option>
                         <option>台北市</option>
                         <option>基隆市</option>
@@ -192,14 +212,39 @@
                         <option>連江縣</option>
                     </select>
                 </div>
+                <div class="col-md-2 divm" id="address-contact-contral-2" style="display:none">
+                    <label for="address-contact-city" class="form-label">&nbsp;</label>
+                    <input class="form-check-input" type="checkbox" value="" name="same-address-1" id="same-address-11">
+                    <label class="form-label form-check-label-new1" for="same-address-1">同永久地址</label>
+                    <select class="form-select" name="address-contact-city" id="address-contact-city2">
+                        <option value="" disabled selected>(選擇城市)</option>
+                        <option>河內</option>
+                        <option>胡志明</option>
+                        <option>金邊</option>
+                        <option>曼谷</option>
+                        <option>清邁</option>
+                        <option>馬尼拉</option>
+                        <option>宿霧</option>
+                        <option>吉隆坡</option>
+                        <option>古晉</option>
+                        <option>新加坡</option>
+                        <option>汶萊</option>
+                        <option>雅加達</option>
+                        <option>錫江</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        請選擇你居住的城市
+                    </div>
+                </div>
+
                 <div class="col-md-8 divm">
                     <label for="address-main-addr" class="form-label">&nbsp;</label>
-                    <input type="text" class="form-control" id="address-contact-addr" placeholder="聯絡地址">
+                    <input type="text" class="form-control" name="address-contact-addr" id="address-contact-addr" placeholder="聯絡地址">
                 </div>
                 <!-- 住房種類 -->
                 <div class="col-md-4 divm">
                     <label for="housetype" class="form-label">居住房屋型態</label><br>
-                    <select id="housetype" class="form-select selec1" value="">
+                    <select name="housetype" id="housetype" class="form-select selec1" value="">
                         <option value="" disabled selected>(請選住房類型)</option>
                         <option>公寓(Municipal)</option>
                         <option>出租公寓</option>
@@ -219,16 +264,17 @@
                 <!-- 工作地址 -->
                 <div class="col-md-2 divm">
                     <label for="address-work-region" class="form-label">工作地址</label>
-                    <select class="form-select" id="address-work-region">
+                    <select class="form-select" name="address-work-region" id="address-work-region">
                         <option value="">(選擇地區)</option>
                         <option>台灣</option>
+                        <option>東南亞</option>
                     </select>
                 </div>
-                <div class="col-md-2 divm">
-                    <label for="address-main-addr" class="form-label">&nbsp;</label>
-                    <input class="form-check-input" type="checkbox" value="" id="same-address-2">
-                    <label class="form-label form-check-label-new1" for="same-address-2">同永久地址</label>
-                    <select class="form-select" id="address-work-city">
+                <div class="col-md-2 divm" id="address-work-contral-1">
+                    <label for="address-work-addr" class="form-label">&nbsp;</label>
+                    <input class="form-check-input" type="checkbox" value="" name="same-address-2" id="same-address-2">
+                    <label class="form-label form-check-label-new1" for="same-address-2">同聯絡地址</label>
+                    <select class="form-select" name="address-work-city" id="address-work-city1">
                         <option value="">(選擇城市)</option>
                         <option>台北市</option>
                         <option>基隆市</option>
@@ -251,21 +297,45 @@
                         <option>澎湖縣</option>
                         <option>金門縣</option>
                         <option>連江縣</option>
-
                     </select>
                 </div>
+                <div class="col-md-2 divm" id="address-work-contral-2" style="display:none">
+                    <label for="address-work-city" class="form-label">&nbsp;</label>
+                    <input class="form-check-input" type="checkbox" value="" name="same-address-2" id="same-address-22">
+                    <label class="form-label form-check-label-new1" for="same-address-2">同聯絡地址</label>
+                    <select class="form-select" name="address-work-city" id="address-work-city2">
+                        <option value="" disabled selected>(選擇城市)</option>
+                        <option>河內</option>
+                        <option>胡志明</option>
+                        <option>金邊</option>
+                        <option>曼谷</option>
+                        <option>清邁</option>
+                        <option>馬尼拉</option>
+                        <option>宿霧</option>
+                        <option>吉隆坡</option>
+                        <option>古晉</option>
+                        <option>新加坡</option>
+                        <option>汶萊</option>
+                        <option>雅加達</option>
+                        <option>錫江</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        請選擇你居住的城市
+                    </div>
+                </div>
+
                 <div class="col-md-8 divm">
                     <label for="address-main-addr" class="form-label">&nbsp;</label>
-                    <input type="text" class="form-control" id="address-work-addr" placeholder="工作地址">
+                    <input type="text" class="form-control" name="address-work-addr" id="address-work-addr" placeholder="工作地址">
                 </div>
                 <div class="col-md-4 divm">
                     <label for="phone-work" class="form-label">工作地點電話</label>
-                    <input type="text" class="form-control" id="phone-work" placeholder="" value="">
+                    <input type="text" class="form-control" name="phone-work" id="phone-work" placeholder="" value="">
                 </div>
                 <!-- 客戶收入/職業 -->
                 <div class="col-md-4 divm">
                     <label for="income-type" class="form-label">主要收入來源</label><br>
-                    <select class="form-select" id="income-type" required>
+                    <select class="form-select" name="income-type" id="income-type" required>
                         <option value="" disabled selected>(選擇類型)</option>
                         <option>工作</option>
                         <option>投資</option>
@@ -274,7 +344,6 @@
                         <option>失業補助</option>
                         <option>助學金</option>
                         <option>商務</option>
-                        <option>生產補助</option>
                     </select>
                     <div class="invalid-feedback">
                         請選擇收入類型
@@ -282,7 +351,7 @@
                 </div>
                 <div class="col-md-4 divm">
                     <label for="profession-type" class="form-label">從事行業別</label><br>
-                    <select class="form-select" id="profession-type" required>
+                    <select class="form-select" name="profession-type" id="profession-type" required>
                         <option value="">(選擇類型)</option>
                         <option>一般勞工</option>
                         <option>銷售人員</option>
@@ -297,11 +366,7 @@
                         <option>清潔人員</option>
                         <option>私人服務人員</option>
                         <option>非技術勞工</option>
-                        <option>服務生、酒保</option>
-                        <option>秘書</option>
-                        <option>房地產經紀人</option>
-                        <option>人力資源人員</option>
-                        <option>IT人員</option>
+                        <option>其他</option>
                     </select>
                     <div class="invalid-feedback">
                         請選擇職業
@@ -309,22 +374,37 @@
                 </div>
                 <div class="col-md-4 divm">
                     <label for="profession-org" class="form-label">工作機構類型</label><br>
-                    <select class="form-select" id="profession-org">
+                    <select class="form-select" name="profession-org" id="profession-org">
                         <option value="" disabled selected>(選擇類型)</option>
                         <option>有限責任公司/企業</option>
+                        <option>農業</option>
+                        <option>銀行</option>
+                        <option>建築業</option>
+                        <option>政府機關</option>
+                        <option>房仲業</option>
+                        <option>幼保機構</option>
+                        <option>藥商</option>
+                        <option>軍事機構</option>
+                        <option>警察機構</option>
+                        <option>郵政機構</option>
+                        <option>旅館業</option>
+                        <option>教育機構</option>
+                        <option>保全</option>
+                        <option>安全機構</option>
+                        <option>服務業</option>
                         <option>自雇</option>
                         <option>其他</option>
                     </select>
                 </div>
                 <div class="col-md-4 divm">
                     <label for="profession-date" class="form-label">現有工作到職日</label><br>
-                    <input type="date" class="form-select date1" id="profession-date">
+                    <input type="date" class="form-select date1" name="profession-date" id="profession-date">
                 </div>
                 <div class="col-md-4 divm Icon-inside">
                     <label for="annaulincome" class="form-label">年收入</label>
                     <!-- <span class="input-group-text">$</span> -->
                     <input type="text" class="form-control dollar mar2" aria-label="Amount (to the nearest dollar)"
-                        id="annaulincome" placeholder=".00">
+                        name="annaulincome" id="annaulincome" placeholder=".00">
                     <!-- <span class="input-group-text">.00</span> -->
                     <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
                 </div>
@@ -345,7 +425,7 @@
                 </div>
                 <div class="col-md-4 divm">
                     <label for="tenure-care-date" class="form-label">車輛年限</label><br>
-                    <input type="date" class="form-select date1" id="tenure-care-date" disabled>
+                    <input type="date" class="form-select date1" name="tenure-care-date" id="tenure-care-date" disabled>
                 </div>
                 <div class="col-md-4 divm ">
                     <label for="" class="form-label">是否擁有房產</label><br>
@@ -384,10 +464,8 @@
                 </div>
                 <div class="col-md-4 divm Icon-inside">
                     <label for="apply-amount" class="form-label">貸款金額</label>
-                    <!-- <span class="input-group-text">$</span> -->
                     <input type="text" class="form-control dollar mar2" aria-label="Amount (to the nearest dollar)"
-                        id="apply-amount" placeholder=".00" required>
-                    <!-- <span class="input-group-text">.00</span> -->
+                        name="apply-amount" id="apply-amount" placeholder=".00" required>
                     <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
                 </div>
             </fieldset>
