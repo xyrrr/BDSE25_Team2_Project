@@ -5,6 +5,7 @@
 {% block styles %}
 
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='mycss/evaluation.css') }}">
 
 {% endblock styles %}
 
@@ -20,7 +21,7 @@
 
 {% endfor %}
 
-<section class="vh-100" style="background-color: #eee;">
+<section class="vh-100" style="background-color:#F0F0F0;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
