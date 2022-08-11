@@ -3,7 +3,7 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 man">
         <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="text">{{ userid }} 信用報表</h1>
+            <h1 class="text">{{ data.id }} 信用報表</h1>
             <div class="btn-toolbar mb-2 mb-md-0 noprint">
                 <div class="btn-group me-2 noprint">
                     <button type="button" class="btn btn-sm btn-outline-secondary">Save</button>
@@ -14,122 +14,129 @@
         <div class="marketing mar">
             <div class="row ">
                 <div class="divm1">
-                    <img class="rounded-circle " src="{{ url_for('static', filename='img/customer.jpg') }}"
-                        alt="customer" width="140" height="140">
-                    <h2>{{ username }}</h2>
                     <ul class=" rounded-circle ulclass ">
-                        <li>性別: {{ gender }}</li>
-                        <li>年齡: {{ userage }}</li>
-                        <li>電話: {{ phonenumber }}</li>
-                        <li>Email: {{ email }}</li>
-                        <li>申請類別: {{ loantype }}</li>
-                        <li>申請金額: {{ loanAMT }}</li>
+                        <li>性別: {{ data.gender }}</li>
+                        <li>年齡: {{ data.age }}</li>
+                        <li>教育程度: {{ data.education }}</li>
+                        <li>年收入: {{ data.income }}</li>
+                        <li>申請類別: {{ data.contract }}</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="marketing mar">
-            <h2 class="butn">信用評估</h2>
+            <h2 class="butn">信用評估:輕度違約風險</h2>
             <div class="row ">
                 <div class=" divm">
-                    <p class="score">{{ score }}</p>
-                    <h5 >信用分數1</h5>
+                    <p class="score" style={{riskind.C12}}>{{ riskind.R12 }}</p>
+                    <h5 >從基本資料判斷</h5>
                 </div>
                 <div class=" divm">
-                    <p class="score">{{ score }}</p>
-                    <h5>信用分數2</h5>
+                    <p class="score" style={{riskind.C22}}>{{ riskind.R22 }}</p>
+                    <h5>從過去申請資料判斷</h5>
                 </div>
                 <div class=" divm">
-                    <p class="score">{{ score }}</p>
-                    <h5>信用分數3</h5>
+                    <p class="score" style={{riskind.C32}}>{{ riskind.R32 }}</p>
+                    <h5>綜合基本/過去<br>申請資料判斷</h5>
                 </div>
             </div>
-
         </div>
-
         <div class="marketing mar">
-            <h2 class="butn">分析圖表</h2>
+            <h2 class="butn">信用評估:嚴重違約風險</h2>
+            <div class="row ">
+                <div class=" divm">
+                    <p class="score" style={{riskind.C11}}>{{ riskind.R11 }}</p>
+                    <h5 >從基本資料判斷</h5>
+                </div>
+                <div class=" divm">
+                    <p class="score" style={{riskind.C21}}>{{ riskind.R21 }}</p>
+                    <h5>從過去申請資料判斷</h5>
+                </div>
+                <div class=" divm">
+                    <p class="score" style={{riskind.C31}}>{{ riskind.R31 }}</p>
+                    <h5>綜合基本/過去<br>申請資料判斷</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="marketing mar">
+            <h2 class="butn">相似特徵之其他客戶獲得的借貸資料</h2>
             <div class="row marcenter">
-
                 <div class="col-lg-4">
-                    <img class=""
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                        alt="Generic placeholder image" width="300" height="300">
-                    <h4>img1</h4>
+                    <img class="" src="{{ url_for('static', filename='img/REQ_QRT.png') }}"
+                        alt="" width="300" height="250">
+                    <h4>徵信次數與最大借貸金額</h4>
                 </div>
                 <div class="col-lg-4">
-                    <img class=""
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                        alt="Generic placeholder image" width="300" height="300">
-                    <h4>img2</h4>
+                    <img class="" src="{{ url_link.work }}"
+                        alt="" width="300" height="250">
+                    <h4>最近一份工作年資與最大借貸金額</h4>
                 </div>
                 <div class="col-lg-4">
-                    <img class=""
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                        alt="Generic placeholder image" width="300" height="300">
-                    <h4>img3</h4>
+                    <img class="" src="{{ url_link.income }}"
+                        alt="" width="300" height="250">
+                    <h4>年收入(萬)與最大借貸金額</h4>
                 </div>
             </div>
-
         </div>
 
-
-
         <div class="mar">
-            <h2 class="butn">歷史紀錄</h2>
+            <h2 class="butn">客戶相關紀錄</h2>
             <div class="table-responsive ">
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
                             <th scope="col">客戶編號</th>
-                            <th scope="col">貸款種類</th>
-                            <th scope="col">核貸額度</th>
-                            <th scope="col">Header</th>
-                            <th scope="col">Header</th>
+                            <th scope="col">年收入</th>
+                            <th scope="col">工作年資</th>
+                            <th scope="col">註冊更改(年)</th>
+                            <th scope="col">身分更改(年)</th>
+                            <th scope="col">詢問徵信局次數(季)</th>
+                            <th scope="col">過去貸款年金中位數</th>
+                            <th scope="col">過去最大核貸額度</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for result in results %}
+                        {% for result in curr_results %}
                         <tr>
-                            <td>{{ result.id }}</td>
-                            <td>{{ result.type }}</td>
-                            <td>{{ result.amount }}</td>
-                            <td>{{ result.other1 }}</td>
-                            <td>{{ result.other2 }}</td>
+                            {% for i in result %}
+                            <td>{{ i }}</td>
+                            {% endfor%}
                         </tr>
                         {% endfor%}
                     </tbody>
                 </table>
             </div>
         </div>
+
         <div class="mar">
-            <h2 class="butn">相似客戶</h2>
+            <h2 class="butn">年收入相同的其他客戶</h2>
             <div class="table-responsive ">
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
                             <th scope="col">客戶編號</th>
-                            <th scope="col">貸款種類</th>
-                            <th scope="col">核貸額度</th>
-                            <th scope="col">Header</th>
-                            <th scope="col">Header</th>
+                            <th scope="col">年收入</th>
+                            <th scope="col">工作年資</th>
+                            <th scope="col">詢問徵信局次數(季)</th>
+                            <th scope="col">貸款年金中位數</th>
+                            <th scope="col">最大核貸額度</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for result in results %}
+                        {% for result in same_results %}
                         <tr>
-                            <td>{{ result.id }}</td>
-                            <td>{{ result.type }}</td>
-                            <td>{{ result.amount }}</td>
-                            <td>{{ result.other1 }}</td>
-                            <td>{{ result.other2 }}</td>
+                            {% for i in result %}
+                            <td>{{ i }}</td>
+                            {% endfor%}
                         </tr>
                         {% endfor%}
                     </tbody>
                 </table>
             </div>
         </div>
+        
     </main>
 </div>
 </div>

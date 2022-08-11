@@ -28,12 +28,12 @@
             <div class="carousel-caption post" style="color: black; font-weight: 600;">
               <h1>特色與功能</h1>
               <p></p>
-              <p>透過客戶提供的個人資訊及財產資訊等，快速估計新客戶的信用評分。</p>
-              <p>透過與資料庫的歷史客戶比較，推算新客戶適合的信用額度。</p>
+              <p>透過客戶提供的個人資訊及財產資訊等，快速估計新客戶的信用風險指標。</p>
+              <p>透過與資料庫的歷史客戶比較，提供決定新客戶適合的信用額度參考。</p>
               <p>
               <ul style="text-align: left;">
                 <li>資訊輸入介面: 供客戶或金融機構員工輸入客戶資訊的網頁表單。                </li>
-                <li>評估資訊報告: 展示依客戶輸入資訊計算出來的信用評分與可負擔的信用額度，以及資料庫內類似客戶的統計圖表。金融機構員工以帳號密碼登入後可以調閱。</li>
+                <li>評估資訊報告: 展示依客戶輸入資訊計算出來的信用風險指標，以及資料庫內類似客戶的統計圖表。金融機構員工以帳號密碼登入後可以調閱。</li>
                 <li>模型結果報告: 紀錄所訓練出的模型的分析結果。金融機構員工以帳號密碼登入後可以調閱。</li>
               </ul>
               </p>
@@ -57,70 +57,65 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
   
     <div class="container marketing">
-  
+
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
           <img class="rounded-circle"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="Generic placeholder image" width="140" height="140">
+            src="{{ url_for('static', filename='img/MEM_jen.jpg') }}"
+            alt="Generic placeholder image" width="200" height="200">
           <h2>黃仁昭</h2>
           <h5>組長</h5>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-            vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus
-            magna.</p>
+          <p>專題架構、系統建置、資料清理、<br>網頁前後端整合</p>
         </div>
         <div class="col-lg-4">
           <img class="rounded-circle"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="Generic placeholder image" width="140" height="140">
+            src="{{ url_for('static', filename='img/MEM_skye.jpg') }}"
+            alt="Generic placeholder image" width="200" height="200">
           <h2>賴思吟</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
-            mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-            condimentum nibh.</p>
+          <h5>主責 - 系統建置</h5>
+          <p>系統建置、資料清理、網頁前端及視覺化</p>
           <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
         </div>
         <div class="col-lg-4">
           <img class="rounded-circle"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="Generic placeholder image" width="140" height="140">
+            src="{{ url_for('static', filename='img/MEM_hazel.jpg') }}"
+            alt="Generic placeholder image" width="200" height="200">
           <h2>黃寶慧</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
-            felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-            massa justo sit amet risus.</p>
+          <h5>主責 - 資料清理</h5>
+          <p>系統建置、資料清理、特徵選擇、模型建置</p>
         </div>
       </div>
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
           <img class="rounded-circle"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="Generic placeholder image" width="140" height="140">
+            src="{{ url_for('static', filename='img/MEM_shirley.jpg') }}"
+            alt="Generic placeholder image" width="200" height="200">
           <h2>王映茜</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-            vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus
-            magna.</p>
+          <h5>主責 - 特徵選擇</h5>
+          <p>系統建置、資料清理、特徵選擇、模型建置</p>
         </div>
         <div class="col-lg-4">
           <img class="rounded-circle"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="Generic placeholder image" width="140" height="140">
+            src="{{ url_for('static', filename='img/MEM_dong.jpg') }}"
+            alt="Generic placeholder image" width="200" height="200">
           <h2>董兆倫</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
-            mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-            condimentum nibh.</p>
+          <h5>主責 - 模型建置</h5>
+          <p>系統建置、資料清理、特徵選擇、模型建置</p>
         </div>
         <div class="col-lg-4">
           <img class="rounded-circle"
             src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="Generic placeholder image" width="140" height="140">
+            alt="Generic placeholder image" width="200" height="200">
           <h2>黃馨儀</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
-            felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-            massa justo sit amet risus.</p>
+          <h5>主責 - 網頁前後端整合</h5>
+          <p>系統建置、資料清理、<br>網頁前後端整合及視覺化</p>
         </div>
       </div>
-  
+      
+
+      
       <!-- /END THE FEATURETTES -->
   
     </div>

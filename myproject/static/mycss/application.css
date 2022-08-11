@@ -135,3 +135,6 @@ select{
     border: solid 1px #C4E1FF;
     background-color: #E6E6F2		;
  }
+ .btnmar{
+    margin-right: 15px;
+ }

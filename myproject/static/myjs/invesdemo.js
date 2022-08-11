@@ -1,7 +1,7 @@
-let invesform=document.getElementsByName("invesform");
 let invesdemo=document.getElementById("demo");
-const fromDb = undefined;
-const obj = fromDb || {};
+let today=new Date()
+
+
 invesdemo.onclick=function invesDemo() {
     
     document.getElementById('typeSuite').value=1;
@@ -21,18 +21,20 @@ invesdemo.onclick=function invesDemo() {
     document.getElementById('cashBank').value=0.6666666;
     document.getElementById('accountEmplyer').value=0;
     document.getElementById('accountpay').value=0.3333337;
-    document.getElementById('curID').value=100001;
-    document.getElementById('fulllName').value="Skye";
-    document.getElementById('apply-day').value="2017-08-19";
-    document.getElementById('registchan-day').value="2015-01-31";
-    document.getElementById('infocang-day').value="2015-08-27";
-    document.getElementById('phone-day').value="2017-07-16";
+    document.getElementById('fullName').value="郭興";
+    document.getElementById('apply-day').value=today.toISOString().split('T')[0];
+    document.getElementById('registchan-day').value=90;
+    document.getElementById('infocang-day').value=7;
+    document.getElementById('phone-day').value=549;
     document.getElementById('OBSSOCIAL60').value=5;
     document.getElementById('suitetype').value="小孩";
-    document.getElementById('housetype').value="獨棟";
     document.getElementById('accountamt').value=5000;
     document.getElementById('cardavg').value=2534.3;
-    document.getElementById('numFile').value=11;
-
-
+    document.getElementById('RateFile').value=0.55;
+    document.getElementById('FONDKAPREMONT_MODE').value="註冊帳號";
+    document.getElementById('DEFSOCIAL60').value=5;
+    document.getElementById('REQDay').value=0;
+    document.getElementById('REQWeek').value=0;
+    document.getElementById('REQRT').value=2;
+    document.getElementById('REQYear').value=6;
 };
