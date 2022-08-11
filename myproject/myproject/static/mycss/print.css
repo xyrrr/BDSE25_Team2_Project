@@ -1,0 +1,11 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print{
+
+    .noprint {
+        display: none;
+    }
+    div,table,body,img {page-break-inside: avoid;}
+}

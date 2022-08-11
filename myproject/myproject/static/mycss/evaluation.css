@@ -1,0 +1,54 @@
+.icon {
+    background-color: #7B7B7B;
+}
+img{
+    margin: 0;
+}
+
+.put {
+    width: 200px;
+
+}
+
+label {
+    font-weight: 900;
+    font-size: larger;
+    font-family: 'monospace', 'Arial Narrow', Arial, sans-serif;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 1px solid #3C3C3C;
+    width: 100px;
+    font-weight: 600;
+    font-family: 'monospace';
+}
+
+.button2:hover {
+    background-color:		#00A600;
+
+}
+
+.div1 {
+    border: 2px #3C3C3C;
+    border-style: groove;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 30px 60px;
+    background-color:#FFFFFF ;
+}
+.staff{
+    margin-right: 30px;
+    color: #FFFFFF;
+}
+
+body{
+    background-color: 	#F0F0F0;
+}
+
+section {
+    margin-top: 120px;
+}

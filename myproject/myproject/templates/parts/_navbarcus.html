@@ -1,0 +1,26 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#"><img id='headimg' src="{{ url_for('static', filename='img/logo5.png') }}" alt="iSpan" width="110px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item {{ index }}">
+            <a class="nav-link" href="home">首頁</a>
+          </li>
+          <li class="nav-item {{ apply }}">
+            <a class="nav-link" href="cusapply">貸款申請表單</a>
+          </li>
+         
+        </ul>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <a href="/register"><button class="btn btn-outline-success btnmar" id="signup" type="submit">Register</button></a>
+          <a href="/login"><button class="btn btn-outline-success btnmar" id="signin" type="submit">Login</button></a>
+        </div>
+
+      </div>
+    </nav>
+  </header>
