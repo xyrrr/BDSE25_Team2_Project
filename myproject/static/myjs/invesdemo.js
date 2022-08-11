@@ -3,7 +3,7 @@ let today=new Date()
 
 
 invesdemo.onclick=function invesDemo() {
-    
+    document.getElementById('currID').value=100001;
     document.getElementById('typeSuite').value=1;
     document.getElementById('yieldhigh').value="高";
     document.getElementById('perIDOmedian').value=2873;
@@ -22,7 +22,7 @@ invesdemo.onclick=function invesDemo() {
     document.getElementById('accountEmplyer').value=0;
     document.getElementById('accountpay').value=0.3333337;
     document.getElementById('fullName').value="郭興";
-    document.getElementById('apply-day').value=today.toISOString().split('T')[0];
+    // document.getElementById('apply-day').value=today.toISOString().split('T')[0];
     document.getElementById('registchan-day').value=90;
     document.getElementById('infocang-day').value=7;
     document.getElementById('phone-day').value=549;

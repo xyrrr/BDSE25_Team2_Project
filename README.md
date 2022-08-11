@@ -19,16 +19,20 @@
 
 ```
 |__ app.py: create all route
+|__ config.py: set all config
 |__ requirements.txt: all python package requirements
 |__ myproject
-    |__ __init__.py: 初始化Python的 "myproject" packages
+    |__ __init.py: 初始化Python的 "myproject" packages
     |__ models.py: 連接使用者資料庫
     |__ webforms.py: 註冊、登入表格設定
     |__ example.py: 示範檔from Sih-Yin
     |               0.啟動前可給予參數設定(內有說明)
     |               1.隨意輸入7位數字，點選評估紐
     |               2.可得到回傳報
-    |__ static: all js, css, image (refer to Sih_Yin's README)
+    |__ loadmodels.py: 載入6個信用評估預測模型
+    |__ mainform.py: 主表單運作
+    |__ questdata.py: 客戶信用評估運作
+    |__ static: all js, css, image, models (refer to Sih_Yin's README)
     |__ templates: all html (refer to Sih_Yin's README)
         |__ login.html: 登入頁面
         |__ register.html: 註冊頁面

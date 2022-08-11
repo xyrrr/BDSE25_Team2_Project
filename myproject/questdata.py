@@ -3,6 +3,7 @@ from pathlib import Path
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
+plt.switch_backend('Agg')
 
 def quest_data(skid):
 

@@ -3,11 +3,11 @@
 
     <hr class="featurette-divider">
     <div class="div1">
-      <form action="/report" method="get" autocomplete="off">
+      <form action="/report" method="post" autocomplete="off">
         <label for="currid">客戶編號 :</label>
         <div class="input-group mb-3">
           <span class="input-group-text icon"><i class="fas fa-user" style="color: #3C3C3C;"></i></span>
-          <input type="text"  class="put" placeholder="Customer ID" name="currid" id="currid"  autocomplete="off" onblur="checkid(this)" maxlength="7" >
+          <input type="text" class="put" placeholder="Customer ID" name="currid" id="currid"  autocomplete="off" maxlength="7" >
         </div>
         <div>
           <button type="submit" class="btn button2"  onclick="checkid()"><i class="fa-solid fa-chart-column"></i> 評 估</button>
