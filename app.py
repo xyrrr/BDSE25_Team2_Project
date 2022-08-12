@@ -9,6 +9,7 @@ from sqlalchemy import func
 import math
 import pandas as pd
 import numpy as np
+from flask_login import current_user
 
 # 一般使用者專區
 # user 頁面
@@ -30,7 +31,12 @@ def cusapply():
 @app.route('/thankapply',methods = ['POST', 'GET'])
 def thankapply():
     result=mainform.mainprocess(request.form)
-    return render_template('thankapply.html')
+    form = LoginForm()
+    if current_user.is_active:
+        print('current_user=',current_user)
+        return render_template('investigation.html')
+    else:
+        return render_template('thankapply.html')
 
 
 from myproject.webforms import LoginForm, RegistrationForm
