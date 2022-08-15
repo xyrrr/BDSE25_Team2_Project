@@ -1,9 +1,6 @@
 let invesdemo=document.getElementById("demo");
-let today=new Date()
-
 
 invesdemo.onclick=function invesDemo() {
-    document.getElementById('currID').value=100001;
     document.getElementById('typeSuite').value=1;
     document.getElementById('yieldhigh').value="高";
     document.getElementById('perIDOmedian').value=2873;
@@ -21,8 +18,6 @@ invesdemo.onclick=function invesDemo() {
     document.getElementById('cashBank').value=0.6666666;
     document.getElementById('accountEmplyer').value=0;
     document.getElementById('accountpay').value=0.3333337;
-    document.getElementById('fullName').value="郭興";
-    // document.getElementById('apply-day').value=today.toISOString().split('T')[0];
     document.getElementById('registchan-day').value=90;
     document.getElementById('infocang-day').value=7;
     document.getElementById('phone-day').value=549;
@@ -31,10 +26,10 @@ invesdemo.onclick=function invesDemo() {
     document.getElementById('accountamt').value=5000;
     document.getElementById('cardavg').value=2534.3;
     document.getElementById('RateFile').value=0.55;
-    document.getElementById('FONDKAPREMONT_MODE').value="註冊帳號";
-    document.getElementById('DEFSOCIAL60').value=5;
+    document.getElementById('DEFSOCIAL60').value=3;
     document.getElementById('REQDay').value=0;
     document.getElementById('REQWeek').value=0;
     document.getElementById('REQRT').value=2;
     document.getElementById('REQYear').value=6;
 };
+

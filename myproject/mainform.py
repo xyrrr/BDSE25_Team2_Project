@@ -1,6 +1,6 @@
 from flask import request
 import datetime
-# from myproject import app, db, engine, table_applications
+from myproject import app, db, engine
 
 def mainprocess(form):
     result = dict()
@@ -10,7 +10,7 @@ def mainprocess(form):
     result['CODE_GENDER_M'] = 0
     if form.get('gender') == 'male': result['CODE_GENDER_M'] = 1
     
-    result['NAME_EDUCATION_TYPE'] = 0
+    result['NAME_EDUCATION_TYPE'] = 5
     if form.get('education') == '國中': result['NAME_EDUCATION_TYPE'] = 0
     if form.get('education') == '高中': result['NAME_EDUCATION_TYPE'] = 1
     if form.get('education') == '大學肆業': result['NAME_EDUCATION_TYPE'] = 2
@@ -32,6 +32,7 @@ def mainprocess(form):
     result['CNT_CHILDREN'] = form['family-child']
     date1 = datetime.date.fromisoformat(form['birth-day'])
     date0 = datetime.date.today()
+    result['APPLY_DAY'] = str(date0)
     result['DAYS_BIRTH'] = (date1 - date0).days
 
     result['FLAG_PHONE'] = 0
@@ -140,8 +141,8 @@ def mainprocess(form):
     result['ORGANIZATION_TYPE_Police'] = 0
     if form.get('profession-org') == '警察機構': result['ORGANIZATION_TYPE_Police'] = 1
 
-    result['ORGANIZATION_TYPE_Police'] = 0
-    if form.get('profession-org') == '郵政機構': result['ORGANIZATION_TYPE_Police'] = 1
+    result['ORGANIZATION_TYPE_Postal'] = 0
+    if form.get('profession-org') == '郵政機構': result['ORGANIZATION_TYPE_Postal'] = 1
     result['ORGANIZATION_TYPE_Restaurant'] = 0
     if form.get('profession-org') == '旅館業': result['ORGANIZATION_TYPE_Restaurant'] = 1
     result['ORGANIZATION_TYPE_School'] = 0
@@ -181,6 +182,35 @@ def mainprocess(form):
     result['NAME_CONTRACT_TYPE_Revolving loans'] = 0
     if form.get('apply-type') == 'apply-type2': result['NAME_CONTRACT_TYPE_Revolving loans'] = 1
     result['AMT_CREDIT'] = form['apply-amount']
+    result['HOUR_APPR_PROCESS_START_x'] = datetime.datetime.now().hour
+
+    result['FINAL_CHECK'] = 0
     
     return result
 
+
+def mainwritesql(data):
+    colword=''
+    valword=''
+    for k,v in data.items():
+        colword = colword + '`' + str(k) + '`,'
+        if isinstance(v, str):
+            valword = valword + "'" + v + "',"
+        else:
+            valword = valword + str(v) + ","
+    colword = colword[:-1]
+    valword = valword[:-1]
+
+    conn=engine.connect()
+    query = f"SELECT max(SK_ID_CURR) FROM temp;"
+    proxy = conn.execute(query)
+    SK_ID = proxy.fetchall()[0][0] +1
+    query = f"INSERT INTO temp(SK_ID_CURR, {colword}) VALUES ({SK_ID},{valword})"
+    proxy = conn.execute(query)
+    conn.close()
+
+    info = {}
+    info['sk_id'] = SK_ID
+    info['fullname'] = data['NAME']
+    info['applyday'] = data['APPLY_DAY']
+    return info

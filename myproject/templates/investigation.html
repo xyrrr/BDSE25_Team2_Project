@@ -1,5 +1,5 @@
 {% extends "parts/base.html" %}
-{% block title %}徵信表單{% endblock title %}
+{% block title %}行員確認表單{% endblock title %}
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='mycss/investigation.css') }}">
@@ -10,8 +10,8 @@
 {% include "parts/_maininves.html" %}
 {{ super() }}
 <script src="{{ url_for('static', filename='bootstrap-5.0.2/dist/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ url_for('static', filename='myjs/investigation.js') }}"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="{{ url_for('static', filename='myjs/invesvalidation.js') }}"></script>
 <script src="{{ url_for('static', filename='myjs/confirm1.js') }}"></script>
 <script src="{{ url_for('static', filename='myjs/invesdemo.js') }}"></script>
-
 {% endblock body %}

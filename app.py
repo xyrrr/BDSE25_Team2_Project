@@ -1,6 +1,6 @@
 # Create all route
 
-from flask import render_template, redirect, request, url_for, flash
+from flask import render_template, redirect, request, url_for, flash, jsonify
 from flask_login import login_user, logout_user, login_required
 from myproject import app, db, engine, table_applications
 from myproject import mainform, loadmodels, questdata
@@ -15,26 +15,27 @@ from flask_login import current_user
 # user 頁面
 @app.route('/')
 def index():
-    return render_template('customerindex.html')
+    return render_template('customerindex.html', index="active")
 
 # user home
 @app.route('/home')
 def home():
-    return render_template('customerindex.html')
+    return render_template('customerindex.html', index="active")
 
 # user 貸款申請表單
 @app.route('/cusapply')
 def cusapply():
-    return render_template('applicationCus.html')
-    # sumit後跳轉到感謝申請頁面 thankapply.html
+    return render_template('applicationCus.html', apply="active")
 
 @app.route('/thankapply',methods = ['POST', 'GET'])
 def thankapply():
     result=mainform.mainprocess(request.form)
+    info=mainform.mainwritesql(result)
+
     form = LoginForm()
     if current_user.is_active:
         print('current_user=',current_user)
-        return render_template('investigation.html')
+        return render_template('investigation.html',info=info)
     else:
         return render_template('thankapply.html')
 
@@ -84,25 +85,42 @@ def logout():
 @app.route('/adminhome')
 @login_required
 def admin():
-    return render_template('index.html', index="active",bankername="Skye")
+    return render_template('index.html', index="active")
 
 # admin version 貸款申請表單
 @app.route('/adminapply')
 @login_required
 def adminapply():
-    return render_template('application.html')
+    return render_template('application.html', apply="active")
 
-# admin version 徵信表單
+# admin version 行員確認表單
 @app.route('/admininves')
 @login_required
 def admininves():
-    return render_template('investigation.html')
+    info = {}
+    info['sk_id'] = ''
+    info['fullname'] = ''
+    info['applyday'] = ''
+    return render_template('investigation.html', inves="active",info=info)
+
+# 行員確認表單中確認資料用flask
+@app.route('/getinfo',methods = ['POST', 'GET'])
+@login_required
+def getinfo():
+    skid=request.form["skid"]
+    data=questdata.quest_temp_data(skid)
+    return jsonify(data)
 
 # admin version 信用評估
-@app.route('/admineval')
+@app.route('/admineval',methods = ['POST', 'GET'])
 @login_required
 def admineval():
-    return render_template('evaluation.html')
+    if request.method == "GET":
+        sk_id = ""
+        return render_template('evaluation.html', evalu="active", skid=sk_id)
+    else:
+        sk_id=request.form["currID"]
+        return render_template('evaluation.html', evalu="active", skid=sk_id)
 
 @app.route('/report',methods = ['POST', 'GET'])
 @login_required
@@ -125,38 +143,8 @@ def report():
     risk_ind = loadmodels.risk_index(re_list)
     same_results, curr_results, url_link = questdata.quest_data(skid)
 
-    return render_template('creditreport.html',data=datas, riskind=risk_ind, same_results=same_results, curr_results=curr_results, url_link=url_link)
+    return render_template('creditreport.html', evalu="active",data=datas, riskind=risk_ind, same_results=same_results, curr_results=curr_results, url_link=url_link)
 
-
-
-@app.route('/data-list')
-@login_required
-def data_list():
-
-    # query string
-    page = int(request.args.get('page') if request.args.get('page') else 1)
-    each_page = 50
-
-    # set total pages
-    connection  = engine.connect() # connection 要放在view function中，否則會出現thread error
-    query = db.select(func.count()).select_from(table_applications)
-    proxy = connection.execute(query)
-    total_pages = math.ceil(proxy.fetchall()[0][0]/each_page) # [0][0] => inorder to get the value
-
-    # fetch data & decided by page
-    query = db.select(table_applications).limit(each_page).offset((page-1)*each_page)
-    proxy = connection.execute(query)
-    results = proxy.fetchall()
-    print(results[1].keys())
-
-    # Close connection
-    connection.close()
-    
-    return render_template('data_list.html',
-                           page_header="Home Credit Applications Database",
-                           total_pages=total_pages,
-                           outputs=results,
-                           page=page)
 
 if __name__ == '__main__':
     app.run(debug=True)

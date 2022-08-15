@@ -32,7 +32,7 @@ def quest_data(skid):
     plt.ylabel('Max. Approved Loan Amount', labelpad=20, fontsize=14)
     plt.bar(x1,y1)
     url_link=dict()
-    url_link['work'] = f'../..//static/img/Year_EMP{skid}.png'
+    url_link['work'] = f'../../static/img/Year_EMP{skid}.png'
     fig.savefig(f'myproject/static/img/Year_EMP{skid}.png',bbox_inches = 'tight')
 
     #  Incom.png  
@@ -48,10 +48,29 @@ def quest_data(skid):
     plt.xlabel('Annual Income (ten thousand)', labelpad=20,fontsize=14)
     plt.ylabel('Max. Approved Loan Amount', labelpad=20, fontsize=14)
     plt.bar(x2,y2)
-    url_link['income'] = f'../..//static/img/Income{skid}.png'
+    url_link['income'] = f'../../static/img/Income{skid}.png'
     fig.savefig(f'myproject/static/img/Income{skid}.png',bbox_inches = 'tight')
 
     conn.close()
 
     return same_results, curr_results, url_link
-    same_results=same_results,curr_results=curr_results,url_work=url_work,url_income=url_income
+
+
+def quest_temp_data(skid):
+
+    skid = int(skid)
+    conn=engine.connect()
+    query1 = f"SELECT SK_ID_CURR,NAME,APPLY_DAY,FINAL_CHECK FROM temp WHERE SK_ID_CURR='{skid}';"
+    proxy1 = conn.execute(query1)
+    data = proxy1.fetchall()
+    if len(data) == 0:
+        result = dict()
+    elif  data[0][3] == 1:
+        result = {'FINAL_CHECK':1}
+    else:
+        dataf = [i for i in data[0]]
+        colname = ['SK_ID_CURR','NAME','APPLY_DAY','FINAL_CHECK']
+        result = dict(list(zip(colname,dataf)))
+
+    conn.close()
+    return result
