@@ -87,7 +87,6 @@ function clickdemo() {
     document.getElementById('profession-date').value=d;
     n=(Math.ceil(Math.random()*100000))*100+25650;
     document.getElementById('annaulincome').value=n.toString();
-    document.getElementById('annaulincome').value="1100000";
     if (Math.random() < 0.66){
         document.getElementById('tenure-care-yes').checked=true;
         document.getElementById('tenure-care-date').disabled = false;

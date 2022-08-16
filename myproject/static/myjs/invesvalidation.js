@@ -7,26 +7,44 @@
   getinfo.onclick=function() {
     document.getElementById('warning_id').style.display = 'none';
     document.getElementById('warning_already').style.display = 'none';
+    document.getElementById('warning_id2').style.display = 'none';
     sk_id = document.getElementById('currID').value;
     info_name.innerHTML = '';
     info_aday.innerHTML = '';
-    // call flask route by ajax
-    $.ajax({
-        type : "POST",
-        url : '/getinfo',
-        data: {'skid':sk_id}
-        }).done((datafromflask) => {
-            console.log(datafromflask);
-            if (Object.keys(datafromflask).length == 0){
-              document.getElementById('warning_id').style.display = 'block';
-            } else if (datafromflask['FINAL_CHECK'] == 1){
-              document.getElementById('warning_already').style.display = 'block';
-            } else {
-              info_name.innerHTML = '&nbsp;&nbsp;' + datafromflask['NAME'];
-              info_aday.innerHTML = '&nbsp;&nbsp;' + datafromflask['APPLY_DAY'];
-            };            
-        });
+    if (sk_id<=400000){
+      document.getElementById('warning_id2').style.display = 'block';
+    }else{ // call flask route by ajax
+      $.ajax({
+          type : "POST",
+          url : '/getinfo',
+          data: {'skid':sk_id}
+          }).done((datafromflask) => {
+              console.log(datafromflask);
+              if (Object.keys(datafromflask).length == 0){
+                document.getElementById('warning_id').style.display = 'block';
+              } else if (datafromflask['FINAL_CHECK'] == 1){
+                document.getElementById('warning_already').style.display = 'block';
+              } else {
+                info_name.innerHTML = '&nbsp;&nbsp;' + datafromflask['NAME'];
+                info_aday.innerHTML = '&nbsp;&nbsp;' + datafromflask['APPLY_DAY'];
+              };            
+          });
+    };
   };
+
+  var firstapp = document.getElementById('firstapp');
+  var letthisarr = document.getElementsByClassName('prev')
+  firstapp.addEventListener('change', function(){
+    if (this.checked){
+      for (i=0;i<letthisarr.length;i++){
+        letthisarr[i].disabled = true;
+      }
+    } else {
+      for (i=0;i<letthisarr.length;i++){
+        letthisarr[i].disabled = false;
+      }
+    }
+  });
 
   let resetbutton = document.getElementsByName("reset-all")[0];
   resetbutton.onclick=function(){

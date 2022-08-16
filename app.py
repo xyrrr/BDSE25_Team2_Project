@@ -3,7 +3,7 @@
 from flask import render_template, redirect, request, url_for, flash, jsonify
 from flask_login import login_user, logout_user, login_required
 from myproject import app, db, engine, table_applications
-from myproject import mainform, loadmodels, questdata
+from myproject import mainform, invesfrom, loadmodels, questdata
 from myproject.models import User
 from sqlalchemy import func
 import math
@@ -120,6 +120,10 @@ def admineval():
         return render_template('evaluation.html', evalu="active", skid=sk_id)
     else:
         sk_id=request.form["currID"]
+        data1,data2 = invesfrom.invesprocess(request.form)
+        print(data1)
+        print(data2)
+        invesfrom.inveswritesql(data1,data2)
         return render_template('evaluation.html', evalu="active", skid=sk_id)
 
 @app.route('/report',methods = ['POST', 'GET'])
