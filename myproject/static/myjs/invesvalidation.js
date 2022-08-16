@@ -11,7 +11,7 @@
     sk_id = document.getElementById('currID').value;
     info_name.innerHTML = '';
     info_aday.innerHTML = '';
-    if (sk_id<=400000){
+    if (sk_id<=500000){
       document.getElementById('warning_id2').style.display = 'block';
     }else{ // call flask route by ajax
       $.ajax({
